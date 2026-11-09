@@ -1,0 +1,397 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Web Design</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: #f5f8ff;
+    color: #24344d;
+    line-height: 1.7;
+}
+
+header {
+    background: #123b78;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo { font-size: 25px; font-weight: bold; }
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover { color: #93c5fd; }
+
+.hero {
+    background: linear-gradient(120deg,#123b78,#2875c7);
+    color: white;
+    text-align: center;
+    padding: 85px 8%;
+}
+
+.hero h1 {
+    font-size: clamp(30px,5vw,48px);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto auto 22px;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: #123b78;
+    padding: 11px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 55px 8%;
+    scroll-margin-top: 75px;
+}
+
+h2 {
+    color: #123b78;
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 29px;
+}
+
+.intro {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 22px;
+    margin-top: 28px;
+}
+
+.card {
+    background: white;
+    padding: 23px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #00000010;
+    border-top: 4px solid #2875c7;
+}
+
+.card h3 {
+    color: #2563a8;
+    margin-bottom: 10px;
+}
+
+.blue-section { background: #e8f1ff; }
+
+.demo {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.demo-grid div {
+    background: #dceaff;
+    padding: 20px 8px;
+    border-radius: 8px;
+    color: #123b78;
+    font-weight: bold;
+}
+
+pre {
+    background: #10233e;
+    color: #d9edff;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-top: 18px;
+    text-align: left;
+}
+
+ul { padding-left: 22px; }
+
+li { margin: 9px 0; }
+
+footer {
+    background: #123b78;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav { justify-content: center; }
+
+    .hero { padding: 65px 5%; }
+
+    section { padding: 42px 5%; }
+
+    .demo-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    nav { gap: 10px; }
+
+    nav a { font-size: 12px; }
+
+    h2 { font-size: 24px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">RWD.</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#working">How It Works</a>
+        <a href="#principles">Principles</a>
+        <a href="#limitations">Limitations</a>
+        <a href="#demo">Demo</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Responsive Web Design</h1>
+    <p>One website, multiple devices, better user experience.
+    Explore how modern websites adapt to different screen sizes.</p>
+    <a href="#about" class="btn">Explore RWD</a>
+</div>
+
+<section id="about">
+    <h2>What is Responsive Web Design?</h2>
+    <p class="intro">
+        Responsive Web Design (RWD) is an approach to web development
+        that makes websites automatically adjust their layout,
+        images and content according to the screen size and device.
+        It provides a comfortable browsing experience on desktops,
+        laptops, tablets and smartphones.
+    </p>
+</section>
+
+<section class="blue-section" id="working">
+    <h2>How Does It Work?</h2>
+    <p class="intro">
+        Responsive websites use HTML, CSS and flexible layouts.
+        CSS media queries apply different styles depending on
+        screen dimensions and other device characteristics.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <h3>1. Viewport</h3>
+            <p>The viewport meta tag tells the browser to match
+            the page width to the device width.</p>
+        </div>
+        <div class="card">
+            <h3>2. Flexible Layout</h3>
+            <p>CSS Grid, Flexbox and relative units help elements
+            resize and rearrange naturally.</p>
+        </div>
+        <div class="card">
+            <h3>3. Media Queries</h3>
+            <p>CSS rules change the design at selected screen
+            widths called breakpoints.</p>
+        </div>
+    </div>
+</section>
+
+<section id="principles">
+    <h2>Core Principles of RWD</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Fluid Grids</h3>
+            <p>Layouts use flexible proportions instead of
+            fixed-width columns.</p>
+        </div>
+        <div class="card">
+            <h3>Flexible Images</h3>
+            <p>Images adjust to fit their containers without
+            overflowing the screen.</p>
+        </div>
+        <div class="card">
+            <h3>Media Queries</h3>
+            <p>Different CSS styles are applied for different
+            screen sizes and conditions.</p>
+        </div>
+        <div class="card">
+            <h3>Mobile First</h3>
+            <p>Design starts with smaller screens and expands
+            for larger devices.</p>
+        </div>
+    </div>
+</section>
+
+<section class="blue-section">
+    <h2>Advantages of Responsive Design</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Better Experience</h3>
+            <p>Visitors can use the website comfortably on
+            different devices.</p>
+        </div>
+        <div class="card">
+            <h3>Easy Maintenance</h3>
+            <p>One website can serve multiple screen sizes.</p>
+        </div>
+        <div class="card">
+            <h3>SEO Benefits</h3>
+            <p>A mobile-friendly experience can support
+            search engine optimization.</p>
+        </div>
+    </div>
+</section>
+
+<section id="limitations">
+    <h2>Limitations of RWD</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Complex Development</h3>
+            <p>Creating layouts for many screen sizes requires
+            careful planning and coding.</p>
+        </div>
+        <div class="card">
+            <h3>Testing Takes Time</h3>
+            <p>Websites must be tested across different
+            browsers and devices.</p>
+        </div>
+        <div class="card">
+            <h3>Performance Issues</h3>
+            <p>Large images and unnecessary resources can
+            slow down mobile loading.</p>
+        </div>
+        <div class="card">
+            <h3>Design Challenges</h3>
+            <p>Some complex desktop features may need
+            redesigning for smaller screens.</p>
+        </div>
+    </div>
+</section>
+
+<section id="demo">
+    <h2>Responsive Layout Demonstration</h2>
+    <p class="intro">
+        Resize your browser window to see how the cards
+        automatically rearrange according to the available width.
+    </p>
+
+    <div class="demo">
+        <h3>Flexible Grid Example</h3>
+        <div class="demo-grid">
+            <div>Content 1</div>
+            <div>Content 2</div>
+            <div>Content 3</div>
+        </div>
+        <p style="margin-top:15px">
+            On smaller screens, these three columns become
+            a single column.
+        </p>
+    </div>
+</section>
+
+<section class="blue-section">
+    <h2>Example of Responsive CSS</h2>
+    <p class="intro">
+        Media queries allow developers to change the layout
+        according to the screen width.
+    </p>
+
+<pre><code>/* Tablet and mobile */
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Flexible images */
+img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+</section>
+
+<section>
+    <h2>Real-World Applications</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>E-Commerce</h3>
+            <p>Online shopping websites.</p>
+        </div>
+        <div class="card">
+            <h3>Education</h3>
+            <p>Online learning platforms.</p>
+        </div>
+        <div class="card">
+            <h3>Business</h3>
+            <p>Company and portfolio websites.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Conclusion</h2>
+    <p class="intro">
+        Responsive Web Design is an important part of modern
+        web development. It helps create flexible, accessible
+        and user-friendly websites that work across devices.
+        Designing for different screens makes the web more
+        convenient for everyone.
+    </p>
+</section>
+
+<footer>
+    <p>Responsive Web Design | Mini Project 2026</p>
+    <p>Designed and Developed by Divya</p>
+</footer>
+
+</body>
+</html>
